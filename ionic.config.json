@@ -1,0 +1,7 @@
+{
+  "name": "ev.moviles",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
