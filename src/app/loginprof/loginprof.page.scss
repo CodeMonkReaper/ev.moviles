@@ -1,0 +1,18 @@
+@import '/src/app/components/body/body.component.scss';
+#cardlogp{
+    background-color:rgb(71, 71, 71);
+    --background: rgb(71, 71, 71);
+    margin: 0px;
+    padding-inline-start: 0%;
+    padding-inline-end: 0%;
+}
+ion-input.custom {
+    --background: #373737;
+  --color: #fff;
+  --placeholder-color: #ddd;
+  --placeholder-opacity: 0.9;
+    --border-color: #444;
+    margin: 0px;
+    padding-inline-start: 0%;
+    padding-inline-end: 0%;
+}

@@ -1,0 +1,35 @@
+<app-header titulo="Login alumno" ></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">loginprof</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header color="dark" >
+      <ion-card-title>LOGIN</ion-card-title>
+    </ion-card-header>
+    <ion-card-content id="cardlogp">
+      <form class="custom" action="" [formGroup]="formulariologin" >
+        <ion-item>
+          <ion-input id="nombre" class="custom"  aria-label="email" formControlName="email" type="text" placeholder="NOMBRE"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input class="custom"  aria-label="Contraseña" formControlName="password" type="password" placeholder="  Contraseña"></ion-input>
+        </ion-item>
+      </form> 
+      <br>
+      <ion-button id="btnloginp" (click)="enviar()"  fill="clear" shape="round">
+        ENVIAR
+      </ion-button>
+      <ion-button slot="end"  id="present-alert">olvidaste tu contraseña?</ion-button>
+<ion-alert
+  trigger="present-alert"
+  header="Recuperar Contraseña"
+  [buttons]="alertButton"
+  [inputs]="alertInputs"
+></ion-alert>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
