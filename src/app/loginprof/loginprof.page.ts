@@ -8,6 +8,7 @@ import { AlertController } from "@ionic/angular";
   styleUrls: ['./loginprof.page.scss'],
 })
 export class LoginprofPage implements OnInit {
+  usuario = JSON.parse(localStorage.getItem("usuario")!);
   formulariologin:FormGroup
   constructor(public fb:FormBuilder,
     public alertController:AlertController,private router:Router) {
@@ -37,7 +38,7 @@ export class LoginprofPage implements OnInit {
   }
   async enviar(){
     var f= this.formulariologin.value;
-    if(this.formulariologin.valid){
+    if(f.email==this.usuario.email && f.password==this.usuario.password){
       this.router.navigate(['inicio-prof'])
     }else{
       const alert = await this.alertController.create({

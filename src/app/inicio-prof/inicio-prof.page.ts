@@ -13,5 +13,5 @@ export class InicioProfPage implements OnInit {
 
   ngOnInit() {
   }
-  saludar: string = "BIENVENIDO"+" "+this.usuario.nombre;
+  saludar: string = "BIENVENIDO"+" "+this.usuario.email;
 }

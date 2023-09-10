@@ -8,6 +8,7 @@ import { AlertController } from "@ionic/angular";
   styleUrls: ['./loginalum.page.scss'],
 })
 export class LoginalumPage implements OnInit {
+  usuario = JSON.parse(localStorage.getItem("usuario")!);
   formulariologin:FormGroup
   public alertButton = [{
     text: 'Ok',
@@ -29,6 +30,7 @@ export class LoginalumPage implements OnInit {
 
   constructor(public fb:FormBuilder,
     public alertController:AlertController, private router:Router) {
+      
       this.formulariologin=this.fb.group({
         'email':new FormControl("",Validators.required),
         'password':new FormControl("",Validators.required)
@@ -39,7 +41,7 @@ export class LoginalumPage implements OnInit {
   ngOnInit() {
   }async enviar(){
     var f= this.formulariologin.value;
-    if(this.formulariologin.valid){
+    if(f.email==this.usuario.email && f.password==this.usuario.password){
       this.router.navigate(['inicio-alumno'])
     }else{
       const alert = await this.alertController.create({
@@ -50,7 +52,7 @@ export class LoginalumPage implements OnInit {
       });
   
       await alert.present();
-      let usuario={
+      var usuario={
         email:f.email,
         password:f.password
       }

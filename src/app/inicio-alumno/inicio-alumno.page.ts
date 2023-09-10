@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioAlumnoPage implements OnInit {
   usuario = JSON.parse(localStorage.getItem("usuario")!);
+
   
   
   
@@ -16,7 +17,7 @@ export class InicioAlumnoPage implements OnInit {
 
   ngOnInit() {
   }
-  saludar: string = "BIENVENIDO"+" "+this.usuario.nombre;
+  saludar: string = "BIENVENIDO"+" "+this.usuario.email;
   
   
 }
