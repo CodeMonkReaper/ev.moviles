@@ -6,12 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./inicio-prof.page.scss'],
 })
 export class InicioProfPage implements OnInit {
-  usuario = JSON.parse(localStorage.getItem("usuario")!);
+  usuarioprof = JSON.parse(localStorage.getItem("usuarioprof")!);
 
 
   constructor() { }
 
   ngOnInit() {
   }
-  saludar: string = "BIENVENIDO"+" "+this.usuario.email;
+  saludar: string = "BIENVENIDO"+" "+this.usuarioprof.email;
 }

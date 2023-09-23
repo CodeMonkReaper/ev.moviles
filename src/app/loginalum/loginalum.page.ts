@@ -8,7 +8,7 @@ import { AlertController } from "@ionic/angular";
   styleUrls: ['./loginalum.page.scss'],
 })
 export class LoginalumPage implements OnInit {
-  usuario = JSON.parse(localStorage.getItem("usuario")!);
+  usuarioalum = JSON.parse(localStorage.getItem("usuarioalum")!);
   formulariologin:FormGroup
   public alertButton = [{
     text: 'Ok',
@@ -41,7 +41,7 @@ export class LoginalumPage implements OnInit {
   ngOnInit() {
   }async enviar(){
     var f= this.formulariologin.value;
-    if(f.email==this.usuario.email && f.password==this.usuario.password){
+    if(f.email==this.usuarioalum.email && f.password==this.usuarioalum.password){
       this.router.navigate(['inicio-alumno'])
     }else{
       const alert = await this.alertController.create({
@@ -52,11 +52,11 @@ export class LoginalumPage implements OnInit {
       });
   
       await alert.present();
-      var usuario={
+      var usuarioalum={
         email:f.email,
         password:f.password
       }
-      localStorage.setItem("usuario",JSON.stringify(usuario));
+      localStorage.setItem("usuarioalum",JSON.stringify(usuarioalum));
     }
     
     
